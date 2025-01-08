@@ -100,7 +100,7 @@ jobs:
       run: |
         # Strip solutions from notebooks (cells tagged "Solutions")
         python scripts/strip_solutions.py
-
+        
     # Step 5: Commit and push the stripped notebooks to main
     - name: Commit and push changes to main branch after stripping solutions
       run: |
