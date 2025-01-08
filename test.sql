@@ -1,5 +1,7 @@
-select *
-from somwhere;
+--here should be a solution
+-- START_EXCLUDE_FROM_PUSH
+SELECT * FROM sensitive_table;
+-- END_EXCLUDE_FROM_PUSH
 
--- this is a comment
--- this is another comment after adding to matthias branch
+-- heres code that should be pushed
+SELECT * FROM public_table;
