@@ -5,3 +5,5 @@ SELECT * FROM sensitive_table;
 
 -- heres code that should be pushed
 SELECT * FROM public_table;
+
+-- and another comment
