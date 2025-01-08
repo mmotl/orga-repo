@@ -101,11 +101,6 @@ jobs:
         # Strip solutions from notebooks (cells tagged "Solutions")
         python scripts/strip_solutions.py
         
-    - name: Remove excluded sections
-      run: |
-        # Remove all excluded sections from SQL files
-        find . -name "*.sql" -exec sed -i '/START_EXCLUDE_FROM_PUSH/,/END_EXCLUDE_FROM_PUSH/d' {} \;
-
     # Step 5: Commit and push the stripped notebooks to main
     - name: Commit and push changes to main branch after stripping solutions
       run: |
