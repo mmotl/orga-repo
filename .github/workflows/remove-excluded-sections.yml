@@ -16,7 +16,7 @@ jobs:
     - name: Remove excluded sections
       run: |
         # Find all SQL files and remove excluded sections
-        find . -name "*.sql" -exec sed -i '/START_EXCLUDE_FROM_PUSH/,/END_EXCLUDE_FROM_PUSH/d' {} \;
+        find . -name "*.sql" -exec sed -i '' '/-- START_EXCLUDE_FROM_PUSH/,/-- END_EXCLUDE_FROM_PUSH/d' {} \;
 
     - name: Commit changes
       run: |
