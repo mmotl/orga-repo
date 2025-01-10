@@ -23,10 +23,21 @@ def process_file(file_path):
     with open(file_path, 'w') as file:
         file.writelines(updated_lines)
 
+def find_repository_root():
+    """
+    Finds the root of the repository by searching for a .git folder.
+    """
+    current_dir = os.getcwd()
+    while current_dir != os.path.dirname(current_dir):  # Stop at filesystem root
+        if os.path.isdir(os.path.join(current_dir, '.git')):
+            return current_dir
+        current_dir = os.path.dirname(current_dir)
+    return os.getcwd()  # Default to current directory if no .git is found
 
 def main():
     """Processes all .sql files in the current directory."""
-    scripts = glob.glob(os.path.join(#notebooks_directory,
+    repository_root = find_repository_root()
+    scripts = glob.glob(os.path.join(repository_root,
                                     '**/*.sql'), recursive=True)
 
     # Process each notebook found
