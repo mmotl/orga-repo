@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
@@ -99,8 +99,8 @@ jobs:
     - name: Process Notebooks - Strip Solutions
       run: |
         # Strip solutions from notebooks (script enclosed in "solution")
-        # python scripts/sql_solutions.py
-        python sql_solutions.py
+        python scripts/sql_solutions.py
+        # python sql_solutions.py
 
     # Step 5: Commit and push the stripped notebooks to main
     - name: Commit and push changes to main branch after stripping solutions
