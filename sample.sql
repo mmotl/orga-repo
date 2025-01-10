@@ -1,5 +1,4 @@
 -- multi solutions test
--- test, test, test
 
 SELECT * FROM table;
 -- START_SOLUTION
